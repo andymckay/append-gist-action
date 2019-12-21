@@ -1,4 +1,4 @@
-name: 'Append Gist'
+name: 'Append to Gist'
 inputs:
   gistURL: 
     description: 'URL to the gist'
@@ -9,10 +9,13 @@ inputs:
   file:
     description: 'The filename containing the gist'
     required: true
+  suffix:
+    description: 'A suffix to append to a file'
+    required: false
 runs:
   using: 'node12'
   main: 'gist.js'
 branding:
   icon: 'align-center'
   color: 'orange'
-description: 'Downloads the contents of a gist into a file.'
+description: 'Appends the contents of file to a gist.'
