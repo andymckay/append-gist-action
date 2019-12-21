@@ -1,0 +1,18 @@
+name: 'Append Gist'
+inputs:
+  gistURL: 
+    description: 'URL to the gist'
+    required: true
+  token:
+    description: 'Token able to append to the gist'
+    required: true
+  file:
+    description: 'The filename containing the gist'
+    required: true
+runs:
+  using: 'node12'
+  main: 'gist.js'
+branding:
+  icon: 'align-center'
+  color: 'orange'
+description: 'Downloads the contents of a gist into a file.'
