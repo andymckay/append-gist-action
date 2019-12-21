@@ -11,7 +11,7 @@ console.log('Gist ID is:', gistID);
 
 let fileData = fs.readFileSync(file, 'utf-8');
 let fileSplit = file.split('/');
-let fileName = fileSplit[fileSplit.length-1] + suffix;
+let fileName = fileSplit[fileSplit.length-1] + (suffix || '');
 
 let options = {
     'host': 'api.github.com',
