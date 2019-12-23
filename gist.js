@@ -36,12 +36,13 @@ let data = {
 }
 
 let req = https.request(options, (resp) => {
+  console.log(`Response: ${resp.statusCode}`);  
   let data = '';
 
   resp.on('data', (chunk) => {
     data += chunk;
   });
-
+  
   resp.on('end', () => {
     console.log(`Gist updated, written: ${fileName}`);
   });
