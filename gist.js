@@ -36,7 +36,11 @@ let data = {
 }
 
 let req = https.request(options, (resp) => {
-  console.log(`Response: ${resp.statusCode}`);  
+  if (resp.statusCode !== 200) {
+    console.log(`Got an error: ${resp.statusCode}`);
+    process.exit(1)
+  }
+ 
   let data = '';
 
   resp.on('data', (chunk) => {
