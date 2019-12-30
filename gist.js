@@ -26,6 +26,11 @@ let options = {
     }
 }
 
+if (!fileData) {
+  console.log('No data in the file, aborting.')
+  process.exit(1)
+}
+
 let data = {
   "files": {
     [fileName]: {
@@ -40,13 +45,13 @@ let req = https.request(options, (resp) => {
     console.log(`Got an error: ${resp.statusCode}`);
     process.exit(1)
   }
- 
+
   let data = '';
 
   resp.on('data', (chunk) => {
     data += chunk;
   });
-  
+
   resp.on('end', () => {
     console.log(`Gist updated, written: ${fileName}`);
   });
