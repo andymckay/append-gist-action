@@ -13,7 +13,7 @@ inputs:
     description: 'A suffix to append to a file'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'gist.js'
 branding:
   icon: 'align-center'
